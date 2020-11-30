@@ -1,0 +1,5 @@
+com\javainuse\controller\FirstController.class
+com\javainuse\repository\ApplicationRepository.class
+com\javainuse\service\ApplicationService.class
+com\javainuse\entities\Application.class
+com\javainuse\FirstApplication.class

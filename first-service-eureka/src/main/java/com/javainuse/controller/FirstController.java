@@ -32,6 +32,6 @@ public class FirstController {
 
 	@GetMapping("/message")
 	public String test() {
-		return "Hello JavaInUse Called in First Service";
+		return "Hello in First Service";
 	}
 }

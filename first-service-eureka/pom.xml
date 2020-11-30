@@ -69,6 +69,7 @@
 			<version>2.17.0</version>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<dependencyManagement>
@@ -96,6 +97,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName>first-service-eureka</finalName>
 	</build>
 
 </project>

@@ -3,9 +3,9 @@ spring:
     name: application-service
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://localhost:5432/testDB
     username: postgres
-    password: ""
+    password: 1
   jpa:
     generate-ddl: true
   jackson:
