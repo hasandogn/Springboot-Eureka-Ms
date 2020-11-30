@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: application-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: ""
+  jpa:
+    generate-ddl: true
+  jackson:
+    serialization: true
+
+server:
+  port: 8081
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka
