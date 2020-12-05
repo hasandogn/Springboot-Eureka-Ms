@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="first-service" />
+        <module name="config-server" />
         <module name="cloud-eureka-discovery-service" />
         <module name="second-service" />
         <module name="cloud-gateway-service" />
@@ -15,6 +16,7 @@
     <bytecodeTargetLevel>
       <module name="cloud-eureka-discovery-service" target="1.8" />
       <module name="cloud-gateway-service" target="1.8" />
+      <module name="config-server" target="11" />
       <module name="first-service" target="1.8" />
       <module name="second-service" target="1.8" />
     </bytecodeTargetLevel>
@@ -23,6 +25,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cloud-eureka-discovery-service" options="-parameters" />
       <module name="cloud-gateway-service" options="-parameters" />
+      <module name="config-server" options="-parameters" />
       <module name="first-service" options="-parameters" />
       <module name="second-service" options="-parameters" />
     </option>

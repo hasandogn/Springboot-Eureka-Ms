@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/../eureka-discovery/pom.xml" />
         <option value="$PROJECT_DIR$/../gateway-service-eureka/pom.xml" />
         <option value="$PROJECT_DIR$/../second-service-eureka/pom.xml" />
+        <option value="$USER_HOME$/Downloads/config-server/pom.xml" />
       </list>
     </option>
   </component>

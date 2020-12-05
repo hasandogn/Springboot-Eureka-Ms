@@ -1,18 +1,36 @@
-version: '3.1'
+#version: '3.1'
+#services:
+#  app:
+#    container_name: first-service-postgresql
+#    image: first-service-postgresql
+#    build: ./
+#    ports:
+#      - "8081:8081"
+#    depends_on:
+#      - postgresqldb
+#  postgresqldb:
+#    image: postgres
+#    ports:
+#      - "5432:5432"
+#    environment:
+#      - POSTGRES_PASSWORD=postgres
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_DB=postgres
+
+version: '3'
+
 services:
-  app:
-    container_name: first-service-postgresql
-    image: first-service-postgresql
-    build: ./
-    ports:
-      - "8081:8081"
-    depends_on:
-      - postgresqldb
-  postgresqldb:
-    image: postgres
-    ports:
-      - "5432:5432"
+  postgresql:
+    image: postgres:9.6-alpine
+    container_name: 'postgresql-db'
     environment:
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - postgresql-db-data:/var/lib/postgresql/data
+      - ./initdb:/docker-entrypoint-initdb.d
+
+volumes:
+  postgresql-db-data:
+    driver: local
