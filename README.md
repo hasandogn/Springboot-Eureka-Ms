@@ -8,9 +8,15 @@ Add projects module by module to the editor. You can then run it one by one.
 
 first-service-eureka> docker run dockerdemo
 
+# Postgresql run with docker?
+
+first-service-eureka> docker-compose up
+
+# Service infos
+
 * Postgresql connection info:
-   - hostname: testDB
-   - ports: 8081:8081
+   - hostname: postgres
+   - ports: 5432
    - Username: postgres
    - pw: postgres
   
