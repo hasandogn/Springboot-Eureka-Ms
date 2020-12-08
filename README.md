@@ -8,6 +8,7 @@ Add projects module by module to the editor. You can then run it one by one.
 
 Created image: 
 - first-service-eureka> docker build -t spring7-boot-docker-postgres .
+
 Run image with compose:
 - first-service-eureka> docker-compose up
 
