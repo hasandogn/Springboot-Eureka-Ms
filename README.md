@@ -6,14 +6,11 @@ Add projects module by module to the editor. You can then run it one by one.
 
 # First-Service project run with docker?
 
-first-service-eureka> docker run dockerdemo
-
-# Postgresql run with docker?
-
 Created image: 
-- first-servşce-eureka> docker build -t spring7-boot-docker-postgres .
+- first-service-eureka> docker build -t spring7-boot-docker-postgres .
 Run image with compose:
 - first-service-eureka> docker-compose up
+
 
 # Service infos
 
