@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Maven: org.hibernate:hibernate-core:5.4.10.Final">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.10.final/hibernate-core-5.4.10.Final.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.10.Final/hibernate-core-5.4.10.Final.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.10.Final/hibernate-core-5.4.10.Final-javadoc.jar!/" />

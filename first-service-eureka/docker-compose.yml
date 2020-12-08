@@ -1,36 +1,57 @@
-#version: '3.1'
-#services:
-#  app:
-#    container_name: first-service-postgresql
-#    image: first-service-postgresql
-#    build: ./
-#    ports:
-#      - "8081:8081"
-#    depends_on:
-#      - postgresqldb
-#  postgresqldb:
-#    image: postgres
-#    ports:
-#      - "5432:5432"
-#    environment:
-#      - POSTGRES_PASSWORD=postgres
-#      - POSTGRES_USER=postgres
-#      - POSTGRES_DB=postgres
-
-version: '3'
-
-services:
-  postgresql:
-    image: postgres:9.6-alpine
-    container_name: 'postgresql-db'
-    environment:
-      - POSTGRES_PASSWORD=postgres
-    ports:
-      - 5432:5432
-    volumes:
-      - postgresql-db-data:/var/lib/postgresql/data
-      - ./initdb:/docker-entrypoint-initdb.d
-
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+version: '3.7'
+networks:
+  backend:
+    name: app
+    driver: bridge
 volumes:
-  postgresql-db-data:
-    driver: local
+  postgres-data:
+# Define services
+services:
+  # App backend service
+  app:
+    image: spring7-boot-docker-postgres:latest
+    # Give the container the name web-app. You can changes to something else.
+    container_name: web1-app
+    # Forward the exposed port 8080 on the container to port 8080 on the host machine
+    ports:
+      - "8081:8081"
+    networks:
+      - backend
+    # This service depends on postgres. Start that first.
+    depends_on:
+      - postgres
+    # Service health check
+    healthcheck:
+      test: curl -f http://localhost:8081/application/all || exit 1
+      interval: 1m
+      timeout: 10s
+      retries: 2
+  # Database Service (Postgres)
+  postgres:
+    # Use the Docker Image postgres. This will pull the 12 version.
+    image: postgres:12
+    # Give the container the name postgres-db. You can changes to something else.
+    container_name: postgres-db
+    restart: always
+    # Set a volume some that database is not lost after shutting down the container.
+    # I used the name postgres-data but you can changed it to something else.
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - backend
+    # Maps port 5432 (localhost) to port 5432 on the container. You can change the ports to fix your needs.
+    ports:
+      - "5432:5432"
+    # Setup the username, password, and database name. You can changes these values.
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    # Service health check
+    healthcheck:
+      test: pg_isready -U postgres
+      interval: 1m
+      timeout: 10s
+      retries: 2

@@ -2,9 +2,12 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/eureka-discovery" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-discovery/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/first-service-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/first-service-eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/gateway-service-eureka" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/gateway-service-eureka-config" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-service-eureka/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/second-service-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/second-service-eureka/src/main/java" charset="UTF-8" />
   </component>
 </project>
