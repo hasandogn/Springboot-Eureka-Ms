@@ -10,7 +10,10 @@ first-service-eureka> docker run dockerdemo
 
 # Postgresql run with docker?
 
-first-service-eureka> docker-compose up
+Created image: 
+- first-servşce-eureka> docker build -t spring7-boot-docker-postgres .
+Run image with compose:
+- first-service-eureka> docker-compose up
 
 # Service infos
 
@@ -23,6 +26,7 @@ first-service-eureka> docker-compose up
 * first-service:
   - application.name: application-service
   - port: 8081
+  - image name: spring7-boot-docker-postgres
   
 * second-service:
   - application.name: sms-service
